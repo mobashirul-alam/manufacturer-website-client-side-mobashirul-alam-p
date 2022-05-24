@@ -21,7 +21,6 @@ const Register = () => {
 
     const onSubmit = async (data) => {
         const { name, email, password } = data;
-        console.log({ name, email, password });
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         toast(`Successfully registered user "${name}"`);
