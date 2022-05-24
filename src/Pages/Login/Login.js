@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import SocialLogin from './SocialLogin';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const [err, setErr] = useState('');
 
     const [
         signInWithEmailAndPassword,
@@ -16,6 +17,12 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    useEffect(() => {
+        if (error) {
+            setErr(error.message);
+        }
+    }, [error]);
 
     const onSubmit = (data) => {
         const { email, password } = data;
@@ -75,16 +82,11 @@ const Login = () => {
                                         required: {
                                             value: true,
                                             message: 'Password is required'
-                                        },
-                                        minLength: {
-                                            value: 6,
-                                            message: 'Password must be 6 characters or longer'
                                         }
                                     })}
                                 />
                                 <label>
                                     {errors.password?.type === 'required' && <span class="text-red-500 label-text-alt">{errors.password.message}</span>}
-                                    {errors.password?.type === 'minLength' && <span class="text-red-500 label-text-alt">{errors.password.message}</span>}
                                 </label>
                                 {/* ----- login page ----- */}
                                 <label class="label">
@@ -93,6 +95,7 @@ const Login = () => {
                                         <Link to='/register' class="label-text-alt link-hover text-blue-500"> Please Register</Link>
                                     </span>
                                 </label>
+                                <p class="text-red-500 text-sm">{err}</p>
                                 {/* ----- submit button ----- */}
                                 <input type="submit" value='Login' class="btn rounded-full text-white mt-4"></input>
                             </div>

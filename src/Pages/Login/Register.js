@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -10,6 +10,7 @@ import Loading from '../Shared/Loading';
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
+    const [err, setErr] = useState('');
 
     const [
         createUserWithEmailAndPassword,
@@ -27,11 +28,18 @@ const Register = () => {
         toast(`Successfully registered user "${name}"`);
         reset();
     }
+
+    useEffect(() => {
+        if (error || updateError) {
+            setErr(error.message || updateError.message);
+        }
+    }, [error, updateError]);
+
     if (user) {
         navigate('/')
     }
 
-    if (loading) {
+    if (loading || updating) {
         return <Loading></Loading>;
     }
 
@@ -120,6 +128,7 @@ const Register = () => {
                                         <Link to='/login' class="label-text-alt link-hover text-blue-500"> Please Login</Link>
                                     </span>
                                 </label>
+                                <p class="text-red-500 text-sm">{err}</p>
                                 {/* ----- submit button ----- */}
                                 <input type="submit" value='Register' class="btn rounded-full text-white mt-4"></input>
                             </div>
