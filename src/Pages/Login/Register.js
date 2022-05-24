@@ -1,12 +1,34 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const onSubmit = async (data) => {
+        const { name, email, password } = data;
+        console.log({ name, email, password });
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        toast(`Successfully registered user "${name}"`);
+        reset();
+    }
+    if (user) {
+        navigate('/')
     }
 
     return (
@@ -98,10 +120,7 @@ const Register = () => {
                                 <input type="submit" value='Register' class="btn rounded-full text-white mt-4"></input>
                             </div>
                         </form>
-                        <div class="divider">OR</div>
-                        <div>
-                            <button class="btn btn-outline w-full rounded-full">Continue With Google</button>
-                        </div>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

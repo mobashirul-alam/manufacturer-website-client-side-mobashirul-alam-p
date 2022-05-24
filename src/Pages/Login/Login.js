@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -76,10 +77,7 @@ const Login = () => {
                                 <input type="submit" value='Login' class="btn rounded-full text-white mt-4"></input>
                             </div>
                         </form>
-                        <div class="divider">OR</div>
-                        <div>
-                            <button class="btn btn-outline w-full rounded-full">Continue With Google</button>
-                        </div>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
