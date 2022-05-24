@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
+import Loading from '../Shared/Loading';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -28,6 +29,10 @@ const Register = () => {
     }
     if (user) {
         navigate('/')
+    }
+
+    if (loading) {
+        return <Loading></Loading>;
     }
 
     return (

@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
@@ -24,6 +25,10 @@ const Login = () => {
     if (user) {
         navigate('/')
     };
+
+    if (loading) {
+        return <Loading></Loading>;
+    }
 
     return (
         <div class="hero min-h-screen">
