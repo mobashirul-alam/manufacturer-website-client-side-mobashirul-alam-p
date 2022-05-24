@@ -16,7 +16,7 @@ const Navbar = () => {
             <Link to='' onClick={() => signOut(auth)} class="">Log Out</Link>
             :
             <Link to='/login'>Login</Link>}</li>
-        <li><Link to=''>{user && user?.displayName}</Link></li>
+        <li><p>{user && user?.displayName}</p></li>
     </>;
     console.log(user);
 

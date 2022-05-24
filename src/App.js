@@ -9,6 +9,7 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import Navbar from './Pages/Shared/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
 import NotFound from './Pages/Shared/NotFound';
+import Footer from './Pages/Shared/Footer';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );
