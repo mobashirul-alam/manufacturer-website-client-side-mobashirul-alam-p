@@ -9,11 +9,13 @@ const BusinessSummary = () => {
         <div>
             <h1 className='text-center text-5xl font-extrabold'>Business Stats</h1>
             <div className='flex justify-center'>
-                <div class="stats shadow-xl mt-4 w-4/5">
+                <div class="stats stats-vertical lg:stats-horizontal shadow-xl mt-4 lg:w-4/5">
 
                     <div class="stat">
                         <div class="stat-figure text-primary">
-                            <img src={revenue} alt="" />
+                            <div className='w-16'>
+                                <img src={revenue} alt="" />
+                            </div>
                         </div>
                         <div class="stat-title">Annual revenue</div>
                         <div class="stat-value text-primary">120M+</div>
@@ -22,7 +24,9 @@ const BusinessSummary = () => {
 
                     <div class="stat">
                         <div class="stat-figure text-secondary">
-                            <img src={reviews} alt="" />
+                            <div className='w-16'>
+                                <img src={reviews} alt="" />
+                            </div>
                         </div>
                         <div class="stat-title">Reviews</div>
                         <div class="stat-value text-secondary">33K+</div>
@@ -31,7 +35,9 @@ const BusinessSummary = () => {
 
                     <div class="stat">
                         <div class="stat-figure text-secondary">
-                            <img src={tools} alt="" />
+                            <div className='w-16'>
+                                <img src={tools} alt="" />
+                            </div>
                         </div>
                         <div class="stat-title">Tools</div>
                         <div class="stat-value text-accent">50+</div>
