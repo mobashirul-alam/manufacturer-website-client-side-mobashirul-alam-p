@@ -11,7 +11,7 @@ const WeAccept = () => {
     return (
         <div className='my-12'>
             <hr />
-            <h1 className='text-center text-6xl font-extrabold text-zinc-500 my-6'>We Accept ...</h1>
+            <h1 className='text-center text-5xl font-extrabold text-zinc-500 my-6'>We Accept ...</h1>
             <div className='mx-6 md:mx-12 flex flex-wrap justify-center gap-4 lg:gap-12'>
                 <img src={visaCard} alt="" />
                 <img src={masterCard} alt="" />
