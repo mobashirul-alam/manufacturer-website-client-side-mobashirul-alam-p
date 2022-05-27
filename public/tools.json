@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Toolsen Hammer 10KG",
+        "img": "https://i.ibb.co/GQLmWVB/toolsen-Hammer.jpg",
+        "description": "Drop-forged carbon steel hammerhead with Black painted and heat treatment also with Fiberglass handle",
+        "minOrderQuantity": "1000",
+        "availableQuantity": "200",
+        "price": "23"
+    },
+    {
+        "name": "Total Electric Drill Machine",
+        "img": "https://i.ibb.co/bPLfxtG/Total-Drill-Machine.jpg",
+        "description": "Voltage: 220-240V~50/60Hz, Input power: 650W/850W, No-load speed: 0-3000/min, Impact rate: 0-48000/min, Chuck capacity: 1.5-13mm",
+        "minOrderQuantity": "1500",
+        "availableQuantity": "150",
+        "price": "29"
+    },
+    {
+        "name": "32 In 1 Multipurpose Screwdriver",
+        "img": "https://i.ibb.co/8rpMdCv/Multipurpose-Screwdriver.jpg",
+        "description": "Size:14*2*1.5cm, Type:Screwdriver Set, 1xScrewdriver Set(included  32pcs), 1x Case",
+        "minOrderQuantity": "3000",
+        "availableQuantity": "500",
+        "price": "9"
+    },
+    {
+        "name": "Adjustable Slywrench Spanner",
+        "img": "https://i.ibb.co/b5j0WVg/Adjustable-Slywrench-Spanner.jpg",
+        "description": "Length: 250 MM (10 Inch), Excellent Quality, Good Grip, No Disappointments, Made in China.",
+        "minOrderQuantity": "2000",
+        "availableQuantity": "350",
+        "price": "13"
+    },
+    {
+        "name": "Electric Circular Saw Machine",
+        "img": "https://i.ibb.co/pd2FYky/Electric-Saw-Machine.jpg",
+        "description": "ELECTRIC CIRCULAR SAW MACHINE, Brand: SUPER POWER, Size: 185mm,Watts:1200, Speed(rpm):4500, Packing(pcs): 4 pcs.",
+        "minOrderQuantity": "500",
+        "availableQuantity": "150",
+        "price": "49"
+    },
+    {
+        "name": "Electric Chainsaw 25CC 1000W",
+        "img": "https://i.ibb.co/znNQvpd/Electric-Chainsaw.jpg",
+        "description": "Large oil reservoir with view window to check oil level, High-quality steel blade, Tool-less chain adjustment, Powerful motor, Wraparound handle",
+        "minOrderQuantity": "500",
+        "availableQuantity": "250",
+        "price": "149"
+    }
+]

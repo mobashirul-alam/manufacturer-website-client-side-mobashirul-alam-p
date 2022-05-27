@@ -44,22 +44,22 @@ const Register = () => {
     }
 
     return (
-        <div class="hero min-h-screen">
-            <div class="hero-content flex-col w-full">
-                <div class="text-center">
-                    <h1 class="text-5xl font-bold">Register now!</h1>
+        <div className="hero min-h-screen">
+            <div className="hero-content flex-col w-full">
+                <div className="text-center">
+                    <h1 className="text-5xl font-bold">Register now!</h1>
                 </div>
-                <div class="card w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Name</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
                                 </label>
                                 <input
                                     type="text"
                                     placeholder="Your name"
-                                    class="input input-bordered"
+                                    className="input input-bordered"
                                     {...register('name', {
                                         required: {
                                             value: true,
@@ -72,17 +72,17 @@ const Register = () => {
                                     })}
                                 />
                                 <label>
-                                    {errors.name?.type === 'required' && <span class="text-red-500 label-text-alt">{errors.name.message}</span>}
-                                    {errors.name?.type === 'minLength' && <span class="text-red-500 label-text-alt">{errors.name.message}</span>}
+                                    {errors.name?.type === 'required' && <span className="text-red-500 label-text-alt">{errors.name.message}</span>}
+                                    {errors.name?.type === 'minLength' && <span className="text-red-500 label-text-alt">{errors.name.message}</span>}
                                 </label>
                                 {/* ----- Email ----- */}
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
                                 <input
                                     type="email"
                                     placeholder="email"
-                                    class="input input-bordered"
+                                    className="input input-bordered"
                                     {...register('email', {
                                         required: {
                                             value: true,
@@ -95,17 +95,17 @@ const Register = () => {
                                     })}
                                 />
                                 <label>
-                                    {errors.email?.type === 'required' && <span class="text-red-500 label-text-alt">{errors.email.message}</span>}
-                                    {errors.email?.type === 'pattern' && <span class="text-red-500 label-text-alt">{errors.email.message}</span>}
+                                    {errors.email?.type === 'required' && <span className="text-red-500 label-text-alt">{errors.email.message}</span>}
+                                    {errors.email?.type === 'pattern' && <span className="text-red-500 label-text-alt">{errors.email.message}</span>}
                                 </label>
                                 {/* ----- Password ----- */}
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
                                 <input
                                     type="password"
                                     placeholder="password"
-                                    class="input input-bordered"
+                                    className="input input-bordered"
                                     {...register('password', {
                                         required: {
                                             value: true,
@@ -118,19 +118,19 @@ const Register = () => {
                                     })}
                                 />
                                 <label>
-                                    {errors.password?.type === 'required' && <span class="text-red-500 label-text-alt">{errors.password.message}</span>}
-                                    {errors.password?.type === 'minLength' && <span class="text-red-500 label-text-alt">{errors.password.message}</span>}
+                                    {errors.password?.type === 'required' && <span className="text-red-500 label-text-alt">{errors.password.message}</span>}
+                                    {errors.password?.type === 'minLength' && <span className="text-red-500 label-text-alt">{errors.password.message}</span>}
                                 </label>
                                 {/* ----- login page ----- */}
-                                <label class="label">
-                                    <span class="label-text-alt">
+                                <label className="label">
+                                    <span className="label-text-alt">
                                         Already have an account ?
-                                        <Link to='/login' class="label-text-alt link-hover text-blue-500"> Please Login</Link>
+                                        <Link to='/login' className="label-text-alt link-hover text-blue-500"> Please Login</Link>
                                     </span>
                                 </label>
-                                <p class="text-red-500 text-sm">{err}</p>
+                                <p className="text-red-500 text-sm">{err}</p>
                                 {/* ----- submit button ----- */}
-                                <input type="submit" value='Register' class="btn rounded-full text-white mt-4"></input>
+                                <input type="submit" value='Register' className="btn rounded-full text-white mt-4"></input>
                             </div>
                         </form>
                         <SocialLogin></SocialLogin>

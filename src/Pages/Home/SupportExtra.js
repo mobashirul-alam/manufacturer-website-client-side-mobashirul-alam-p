@@ -5,7 +5,7 @@ import moneyReturn from '../../assets/extra/return-of-investment.png';
 
 const SupportExtra = () => {
     return (
-        <div className='flex flex-wrap justify-center gap-20 my-12'>
+        <div className='flex flex-wrap justify-center gap-20 mt-28 lg:mt-32'>
             <div className='flex items-center gap-4'>
                 <div>
                     <img src={support} alt="" />

@@ -29,12 +29,12 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <div class="divider">OR</div>
-            <p class="text-red-500 text-sm mb-2">{err}</p>
+            <div className="divider">OR</div>
+            <p className="text-red-500 text-sm mb-2">{err}</p>
             <div>
                 <button
                     onClick={handleGoogleLogin}
-                    class="btn btn-outline w-full rounded-full">
+                    className="btn btn-outline w-full rounded-full">
                     Continue With Google
                 </button>
             </div>
