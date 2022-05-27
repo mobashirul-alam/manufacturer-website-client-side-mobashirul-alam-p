@@ -91,7 +91,7 @@ const Login = () => {
                                 <label>
                                     {errors.password?.type === 'required' && <span className="text-red-500 label-text-alt">{errors.password.message}</span>}
                                 </label>
-                                {/* ----- login page ----- */}
+                                {/* ----- to login page ----- */}
                                 <label className="label">
                                     <span className="label-text-alt">
                                         New to Golden Weight ?
