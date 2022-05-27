@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
-    const { name, img, description, minOrderQuantity, availableQuantity, price } = tool;
+    const { _id, name, img, description, minOrderQuantity, availableQuantity, price } = tool;
+    const navigate = useNavigate();
+
     return (
         <div class="card max-w-sm shadow-2xl mx-auto">
             <figure><img className='w-4/5 lg:w-full' src={img} alt="" /></figure>
@@ -16,7 +19,11 @@ const Tool = ({ tool }) => {
                     Price: <span className='text-2xl'>{price}$</span> /pcs
                 </p>
                 <div class="card-actions justify-center">
-                    <button class="btn text-white">Purchase</button>
+                    <button
+                        onClick={() => navigate(`/purchase/${_id}`)}
+                        className="btn text-white">
+                        Purchase
+                    </button>
                 </div>
             </div>
         </div>

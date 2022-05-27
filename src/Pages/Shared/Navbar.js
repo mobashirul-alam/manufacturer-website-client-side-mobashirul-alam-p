@@ -13,12 +13,11 @@ const Navbar = () => {
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/register'>Register</Link></li>
         <li>{user ?
-            <Link to='' onClick={() => signOut(auth)} className="">Log Out</Link>
+            <button onClick={() => signOut(auth)} className="font-medium">Log Out</button>
             :
             <Link to='/login'>Login</Link>}</li>
         <li><p>{user && user?.displayName}</p></li>
     </>;
-    console.log(user);
 
     return (
         <div className="navbar bg-base-100 lg:px-12 sticky top-0 z-50">

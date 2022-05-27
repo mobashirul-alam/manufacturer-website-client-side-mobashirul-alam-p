@@ -10,6 +10,8 @@ import Navbar from './Pages/Shared/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
 import NotFound from './Pages/Shared/NotFound';
 import Footer from './Pages/Shared/Footer';
+import RequireAuth from './Pages/Login/RequireAuth';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth>
+          <Purchase></Purchase>
+        </RequireAuth>}></Route>
         <Route path='/myPortfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
