@@ -12,7 +12,7 @@ const Tool = ({ tool }) => {
                 <h2 class="card-title">{name}</h2>
                 <p className='text-sm font-light'>{description}</p>
                 <p className='font-semibold text-sm'>
-                    Available: <span className='text-2xl'>{availableQuantity}k</span> pcs
+                    Available: <span className='text-2xl'>{availableQuantity}</span> pcs
                     <br />
                     Minimum Order Quantity: <span className='text-2xl'>{minOrderQuantity}</span> pcs
                     <br />

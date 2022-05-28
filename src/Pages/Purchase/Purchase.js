@@ -11,7 +11,7 @@ const Purchase = () => {
     const params = useParams();
     const id = params.id;
 
-    const { _id, name, img, description, minOrderQuantity, availableQuantity, price } = tool;
+    const { name, img, description, minOrderQuantity, availableQuantity, price } = tool;
 
     useEffect(() => {
         fetch(`http://localhost:5000/tool/${id}`)
@@ -46,10 +46,7 @@ const Purchase = () => {
                 </div>
             </div>
             <div className='flex-1'>
-                <OrderConfirmForm
-                    user={user}
-                    tool={tool}
-                ></OrderConfirmForm>
+                <OrderConfirmForm></OrderConfirmForm>
             </div>
         </div>
     );
