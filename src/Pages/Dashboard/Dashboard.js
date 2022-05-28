@@ -13,16 +13,16 @@ const Dashboard = () => {
         return <Loading></Loading>;
     }
     return (
-        <div class="drawer drawer-mobile">
-            <input id="dashboardSidebar" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col items-center">
+        <div className="drawer drawer-mobile">
+            <input id="dashboardSidebar" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col items-center">
                 {/* <!-- Page content here --> */}
                 <h1 className='text-4xl text-accent font-bold mb-4'>Welcome to your Dashboard</h1>
                 <Outlet></Outlet>
             </div>
-            <div class="drawer-side">
-                <label for="dashboardSidebar" class="drawer-overlay"></label>
-                <ul class="menu px-8 py-4 overflow-y-auto bg-base-200 text-base-content font-medium">
+            <div className="drawer-side">
+                <label for="dashboardSidebar" className="drawer-overlay"></label>
+                <ul className="menu px-8 py-4 overflow-y-auto bg-base-200 text-base-content font-medium">
                     {/* <!-- Sidebar content here --> */}
                     {
                         !admin && <>

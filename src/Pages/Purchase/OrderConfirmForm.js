@@ -18,7 +18,7 @@ const OrderConfirmForm = () => {
     const [inputOrder, setInputOrder] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://golden-weight-tools.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id]);
@@ -34,7 +34,7 @@ const OrderConfirmForm = () => {
         const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity, price: totalPrice };
         console.log(order);
         if (data) {
-            fetch('http://localhost:5000/orders', {
+            fetch('https://golden-weight-tools.herokuapp.com/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -55,14 +55,14 @@ const OrderConfirmForm = () => {
     };
 
     return (
-        <div class="hero min-h-screen">
-            <div class="hero-content flex-col">
-                <div class="text-center">
-                    <h1 class="text-6xl font-bold mb-2">Confirm Order</h1>
-                    <h1 class="text-2xl font-medium">For - {productName}</h1>
+        <div className="hero min-h-screen">
+            <div className="hero-content flex-col">
+                <div className="text-center">
+                    <h1 className="text-6xl font-bold mb-2">Confirm Order</h1>
+                    <h1 className="text-2xl font-medium">For - {productName}</h1>
                 </div>
-                <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
                                 <input

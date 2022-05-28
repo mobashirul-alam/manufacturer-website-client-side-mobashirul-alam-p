@@ -11,7 +11,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://golden-weight-tools.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,8 +35,8 @@ const AddReview = () => {
         <div className='text-center shadow-xl p-8 rounded-xl md:mt-12'>
             <h1 className='text-center text-3xl font-medium mb-4'>Review Form</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="User Name" value={user.displayName} class="input input-bordered w-80 mb-2" required {...register("userName")} />
-                <select class="select select-bordered w-full max-w-xs mb-2" required {...register("rating")}>
+                <input type="text" placeholder="User Name" value={user.displayName} className="input input-bordered w-80 mb-2" required {...register("userName")} />
+                <select className="select select-bordered w-full max-w-xs mb-2" required {...register("rating")}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -44,7 +44,7 @@ const AddReview = () => {
                     <option value="5">5</option>
                 </select>
                 <br />
-                <textarea class="textarea textarea-bordered w-80" placeholder="Please Comment" required {...register("comment")}></textarea>
+                <textarea className="textarea textarea-bordered w-80" placeholder="Please Comment" required {...register("comment")}></textarea>
                 <br />
                 <input type="submit" value='Place Review' className='btn mt-2' />
             </form>

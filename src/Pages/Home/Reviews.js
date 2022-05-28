@@ -4,7 +4,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://golden-weight-tools.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -15,11 +15,11 @@ const Reviews = () => {
             <div className='flex flex-wrap justify-center gap-10'>
                 {
                     reviews.map(r => <>
-                        <div class="card w-96 bg-base-100 shadow-2xl">
-                            <div class="card-body mx-auto">
-                                <h2 class="card-title text-green-700">{r.userName}</h2>
+                        <div className="card w-96 bg-base-100 shadow-2xl">
+                            <div className="card-body mx-auto">
+                                <h2 className="card-title text-green-700">{r.userName}</h2>
                                 <hr />
-                                <h2 class="card-title text-primary  text-base font-bold">Rating : {r.rating}</h2>
+                                <h2 className="card-title text-primary  text-base font-bold">Rating : {r.rating}</h2>
                                 <hr />
                                 <p>{r.comment}</p>
                             </div>

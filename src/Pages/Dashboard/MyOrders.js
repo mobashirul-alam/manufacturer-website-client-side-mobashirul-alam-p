@@ -12,7 +12,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${user.email}`, {
+        fetch(`https://golden-weight-tools.herokuapp.com/order/${user.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const MyOrders = () => {
     const handleCancel = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel the order ?');
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://golden-weight-tools.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -50,8 +50,8 @@ const MyOrders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
                     <thead>
                         <tr>
                             <th></th>

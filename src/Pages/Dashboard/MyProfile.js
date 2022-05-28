@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [user, loading] = useAuthState(auth);
 
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/usersProfile/${user.email}`, {
+        fetch(`https://golden-weight-tools.herokuapp.com/usersProfile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

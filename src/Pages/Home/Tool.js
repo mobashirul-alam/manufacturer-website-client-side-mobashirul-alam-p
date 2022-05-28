@@ -6,10 +6,10 @@ const Tool = ({ tool }) => {
     const navigate = useNavigate();
 
     return (
-        <div class="card max-w-sm shadow-2xl mx-auto">
+        <div className="card max-w-sm shadow-2xl mx-auto">
             <figure><img className='w-4/5 lg:w-full' src={img} alt="" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">{name}</h2>
+            <div className="card-body">
+                <h2 className="card-title">{name}</h2>
                 <p className='text-sm font-light'>{description}</p>
                 <p className='font-semibold text-sm'>
                     Available: <span className='text-2xl'>{availableQuantity}</span> pcs
@@ -18,7 +18,7 @@ const Tool = ({ tool }) => {
                     <br />
                     Price: <span className='text-2xl'>{price}$</span> /pcs
                 </p>
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                     <button
                         onClick={() => navigate(`/purchase/${_id}`)}
                         className="btn text-white">

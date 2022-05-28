@@ -9,7 +9,7 @@ const useToken = (user) => {
         const email = user?.user?.email || user?.email;
         const userSaved = { email: email };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://golden-weight-tools.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

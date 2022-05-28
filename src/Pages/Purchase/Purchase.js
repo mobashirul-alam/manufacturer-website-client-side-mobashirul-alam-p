@@ -14,7 +14,7 @@ const Purchase = () => {
     const { name, img, description, minOrderQuantity, availableQuantity, price } = tool;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://golden-weight-tools.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id]);
@@ -26,10 +26,10 @@ const Purchase = () => {
     return (
         <div className='md:flex mb-20 flex-row-reverse'>
             <div className='flex-1'>
-                <div class="card max-w-lg shadow-2xl mx-auto">
+                <div className="card max-w-lg shadow-2xl mx-auto">
                     <figure><img className='w-2/3' src={img} alt="" /></figure>
-                    <div class="card-body pt-0">
-                        <h2 class="card-title text-4xl">{name}</h2>
+                    <div className="card-body pt-0">
+                        <h2 className="card-title text-4xl">{name}</h2>
                         <hr className='border' />
                         <p className='text-lg '>
                             <span className='font-medium'>Product Info:</span>
