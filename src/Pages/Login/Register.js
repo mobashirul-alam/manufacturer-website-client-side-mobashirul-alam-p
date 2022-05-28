@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -21,6 +22,8 @@ const Register = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user);
+
     const onSubmit = async (data) => {
         const { name, email, password } = data;
         await createUserWithEmailAndPassword(email, password);
@@ -35,7 +38,7 @@ const Register = () => {
         }
     }, [error, updateError]);
 
-    if (user) {
+    if (token) {
         navigate('/')
     }
 
