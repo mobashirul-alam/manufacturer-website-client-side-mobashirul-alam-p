@@ -36,7 +36,6 @@ const Login = () => {
     }
 
     if (token) {
-        reset()
         navigate(from, { replace: true });
     };
 

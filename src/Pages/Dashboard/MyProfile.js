@@ -10,7 +10,6 @@ const MyProfile = () => {
     const [user, loading] = useAuthState(auth);
 
     const onSubmit = (data) => {
-        console.log(data)
         fetch(`http://localhost:5000/usersProfile/${user.email}`, {
             method: 'PUT',
             headers: {

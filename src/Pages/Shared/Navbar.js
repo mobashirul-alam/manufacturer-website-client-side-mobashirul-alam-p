@@ -4,9 +4,15 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-transparent.png';
 import auth from '../../firebase.init';
+import Loading from './Loading';
 
 const Navbar = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+
+    const handleLogOut = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    }
 
     const menu = <>
         <li><Link to='/myPortfolio'>My Portfolio</Link></li>
@@ -16,11 +22,15 @@ const Navbar = () => {
         }
         <li><Link to='/register'>Register</Link></li>
         <li>{user ?
-            <button onClick={() => signOut(auth)} className="font-medium">Log Out</button>
+            <button onClick={handleLogOut} className="font-medium">Log Out</button>
             :
             <Link to='/login'>Login</Link>}</li>
         <li><p>{user && user?.displayName}</p></li>
     </>;
+
+    if (loading) {
+        return <Loading></Loading>;
+    }
 
     return (
         <div className="navbar bg-base-100 lg:px-6 sticky top-0 z-50">

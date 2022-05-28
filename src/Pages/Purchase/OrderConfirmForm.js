@@ -30,7 +30,8 @@ const OrderConfirmForm = () => {
     // console.log(register('orderQuantity').onChange)
 
     const onSubmit = (data) => {
-        const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity, price: price };
+        const totalPrice = price * data.orderQuantity;
+        const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity, price: totalPrice };
         console.log(order);
         if (data) {
             fetch('http://localhost:5000/orders', {
