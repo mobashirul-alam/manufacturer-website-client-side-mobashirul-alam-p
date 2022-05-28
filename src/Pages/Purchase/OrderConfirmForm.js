@@ -9,7 +9,7 @@ import Loading from '../Shared/Loading';
 const OrderConfirmForm = () => {
     const [user, loading] = useAuthState(auth);
     const [tool, setTool] = useState({});
-    const { name: productName, minOrderQuantity, availableQuantity } = tool;
+    const { name: productName, minOrderQuantity, availableQuantity, price } = tool;
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const params = useParams();
     const id = params.id;
@@ -30,7 +30,7 @@ const OrderConfirmForm = () => {
     // console.log(register('orderQuantity').onChange)
 
     const onSubmit = (data) => {
-        const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity }
+        const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity, price: price };
         console.log(order);
         if (data) {
             fetch('http://localhost:5000/orders', {
@@ -121,7 +121,7 @@ const OrderConfirmForm = () => {
                                     type="submit"
                                     value='Place Order'
                                     className="btn rounded-full text-white mt-4"
-                                    disabled={minOrderQuantity > inputOrder || inputOrder > availableQuantity}
+                                // disabled={minOrderQuantity > inputOrder}
                                 ></input>
                             </div>
                         </form>

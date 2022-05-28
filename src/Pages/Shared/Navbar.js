@@ -11,6 +11,9 @@ const Navbar = () => {
     const menu = <>
         <li><Link to='/myPortfolio'>My Portfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        {
+            user && <li><Link to='dashboard'>Dashboard</Link></li>
+        }
         <li><Link to='/register'>Register</Link></li>
         <li>{user ?
             <button onClick={() => signOut(auth)} className="font-medium">Log Out</button>
@@ -20,7 +23,7 @@ const Navbar = () => {
     </>;
 
     return (
-        <div className="navbar bg-base-100 lg:px-12 sticky top-0 z-50">
+        <div className="navbar bg-base-100 lg:px-6 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -38,6 +41,12 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     {menu}
                 </ul>
+            </div>
+            {/* ----- open dashboard sidebar ----- */}
+            <div className='navbar-end lg:hidden'>
+                <label for="dashboardSidebar" tabindex="1" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
             </div>
         </div>
     );
