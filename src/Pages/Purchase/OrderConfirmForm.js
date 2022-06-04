@@ -31,8 +31,13 @@ const OrderConfirmForm = () => {
 
     const onSubmit = (data) => {
         const totalPrice = price * data.orderQuantity;
-        const order = { ...data, productName, orderQuantity: inputOrder || minOrderQuantity, price: totalPrice };
-        console.log(order);
+        const order = {
+            ...data,
+            productName,
+            orderQuantity: inputOrder || minOrderQuantity,
+            price: totalPrice
+        };
+        console.log(order, totalPrice, price);
         if (data) {
             fetch('https://golden-weight-tools.herokuapp.com/orders', {
                 method: 'POST',

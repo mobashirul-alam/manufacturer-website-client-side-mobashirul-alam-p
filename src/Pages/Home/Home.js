@@ -17,7 +17,6 @@ const Home = () => {
             <Reviews></Reviews>
             <WeAccept></WeAccept>
             <StayConnected></StayConnected>
-            <h1 className='text-center text-6xl'>Welcome to Golden Weight Tools</h1>
         </div>
     );
 };
