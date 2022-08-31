@@ -26,23 +26,20 @@ const MyOrders = () => {
                 }
                 return res.json()
             })
-            .then(data => setOrders(data))
-    }, [user, navigate]);
+            .then(data => setOrders(data.reverse()))
+    }, [orders, user, navigate]);
 
     const handleCancel = (id) => {
-        const proceed = window.confirm('Are you sure you want to cancel the order ?');
-        if (proceed) {
-            fetch(`https://golden-weight-tools.herokuapp.com/orders/${id}`, {
-                method: 'DELETE'
+        fetch(`https://golden-weight-tools.herokuapp.com/orders/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    toast.error('Ordered Canceled Successfully')
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data) {
-                        toast.error('Ordered Canceled Successfully')
-                    }
-                })
-        }
-    }
+    };
 
     if (loading) {
         return <Loading></Loading>;
@@ -92,7 +89,33 @@ const MyOrders = () => {
                                     {
                                         !order.paid
                                         &&
-                                        <button onClick={() => handleCancel(order._id)} className='btn btn-error btn-sm text-black'>Cancel</button>
+                                        <div>
+                                            {/* <button onClick={() => handleCancel(order._id)} className='btn btn-error btn-sm text-black'>Cancel</button> */}
+
+                                            <label for="cancel-order-modal" className="btn modal-button btn-error btn-sm">
+                                                Cancel
+                                            </label>
+
+
+                                            <input type="checkbox" id="cancel-order-modal" class="modal-toggle" />
+                                            <div class="modal modal-bottom sm:modal-middle">
+                                                <div class="modal-box">
+                                                    <label for="cancel-order-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                                    <h3 class="font-bold text-lg">
+                                                        Are you sure you want to cancel the order?
+                                                    </h3>
+                                                    <div class="modal-action">
+                                                        <label
+                                                            for="cancel-order-modal"
+                                                            onClick={() => handleCancel(order._id)}
+                                                            className='btn btn-error btn-sm text-black'
+                                                        >
+                                                            Cancel Order
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     }
                                 </td>
                             </tr>)
@@ -101,7 +124,7 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
