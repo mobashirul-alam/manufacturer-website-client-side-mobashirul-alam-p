@@ -5,7 +5,7 @@ const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
     const [makeUserAdmin, setMakeUserAdmin] = useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/allUser', {
+        fetch('https://golden-weight-tools.herokuapp.com/allUser', {
             method: "GET",
             headers: {
                 'content-type': 'application/json',

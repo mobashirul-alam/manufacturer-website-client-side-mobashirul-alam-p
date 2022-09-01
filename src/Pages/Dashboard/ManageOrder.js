@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [orderStatus, setOrderStatus] = useState('');
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders', {
+        fetch('https://golden-weight-tools.herokuapp.com/allOrders', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +16,7 @@ const ManageOrder = () => {
     }, [allOrders]);
 
     const handleUpdateOrderStatus = (_id) => {
-        const url = `http://localhost:5000/allOrders/${_id}`;
+        const url = `https://golden-weight-tools.herokuapp.com/allOrders/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

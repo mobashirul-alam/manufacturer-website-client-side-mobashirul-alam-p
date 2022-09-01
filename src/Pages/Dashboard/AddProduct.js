@@ -7,7 +7,7 @@ const AddProduct = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        fetch('http://localhost:5000/tools', {
+        fetch('https://golden-weight-tools.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

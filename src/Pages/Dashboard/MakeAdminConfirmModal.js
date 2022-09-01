@@ -6,7 +6,7 @@ const MakeAdminConfirmModal = ({ makeUserAdmin }) => {
     // console.log(makeUserAdmin)
 
     const makeAdmin = () => {
-        const url = `http://localhost:5000/allUser/${_id}`;
+        const url = `https://golden-weight-tools.herokuapp.com/allUser/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

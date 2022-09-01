@@ -16,6 +16,9 @@ const MyPortfolio = () => {
             <div className='text-xl text-center mt-4'>
                 <p><span className='font-semibold'>Name: </span> Md. Mobashirul Alam Seam</p>
                 <p><span className='font-semibold'>Email : </span> mobashirulalamseam@gmail.com</p>
+                <p><span className='font-semibold'>Portfolio live-site : </span>
+                    <a className='link text-blue-700' target={'_blank'} rel="noreferrer" href="https://portfolio-mobashirul-alam.web.app/">Click to see the portfolio site</a>
+                </p>
                 <p className='md:w-3/4 lg:w-1/2 mx-auto'><span className='font-semibold'>Educational Info : </span>
                     I've passed SSC at 2017 as a student of Chittagong Govt. High School, Chittagong under Chittagong Board.
                     I've completed HSC at 2019 as a student of Hajera Taju Degree College, Chittagong under Chittagong Board.
