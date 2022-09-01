@@ -6,7 +6,7 @@ const Reviews = () => {
     useEffect(() => {
         fetch('https://golden-weight-tools.herokuapp.com/reviews')
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => setReviews(data.reverse()))
     }, [])
     return (
         <div>
@@ -14,7 +14,7 @@ const Reviews = () => {
             <hr className='border border-accent w-4/5 lg:w-1/2 mx-auto mt-6 mb-8' />
             <div className='flex flex-wrap justify-center gap-10'>
                 {
-                    reviews.map(r => <>
+                    reviews.slice(0, 6).map(r => <>
                         <div className="card w-96 bg-base-100 shadow-2xl">
                             <div className="card-body mx-auto">
                                 <h2 className="card-title text-green-700">{r.userName}</h2>

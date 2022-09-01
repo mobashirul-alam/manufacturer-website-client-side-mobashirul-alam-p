@@ -15,17 +15,17 @@ const Navbar = () => {
     }
 
     const menu = <>
-        <li><Link to='/myPortfolio'>My Portfolio</Link></li>
+        <li><Link to='/myPortfolio' className='whitespace-nowrap'>My Portfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         {
             user && <li><Link to='dashboard'>Dashboard</Link></li>
         }
         <li><Link to='/register'>Register</Link></li>
         <li>{user ?
-            <button onClick={handleLogOut} className="font-medium">Log Out</button>
+            <button onClick={handleLogOut} className="font-medium whitespace-nowrap">Log Out</button>
             :
             <Link to='/login'>Login</Link>}</li>
-        <li><p>{user && user?.displayName}</p></li>
+        <li><p className='whitespace-nowrap'>{user && user?.displayName}</p></li>
     </>;
 
     if (loading) {

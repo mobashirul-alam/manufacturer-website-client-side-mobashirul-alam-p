@@ -8,16 +8,17 @@ import Loading from '../Shared/Loading';
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
     const [admin] = useAdmin(user);
-    console.log(admin)
+
     if (loading) {
         return <Loading></Loading>;
-    }
+    };
+
     return (
         <div className="drawer drawer-mobile">
             <input id="dashboardSidebar" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center">
+            <div className="drawer-content ml-4 overflow-auto">
                 {/* <!-- Page content here --> */}
-                <h1 className='text-4xl text-accent font-bold mb-4'>Welcome to your Dashboard</h1>
+                <h1 className='text-4xl text-accent text-center font-bold mb-4'>Welcome to your Dashboard</h1>
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">

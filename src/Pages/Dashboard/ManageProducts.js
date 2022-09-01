@@ -14,7 +14,6 @@ const ManageProducts = () => {
     }, [])
     return (
         <div class="overflow-x-auto mb-12">
-            <h1>Products: {products.length}</h1>
             <table class="table table-zebra w-full">
                 <thead>
                     <tr>
@@ -27,7 +26,7 @@ const ManageProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(product => <tr>
+                        products.map(product => <tr key={product._id}>
                             <th>
                                 <div class="avatar">
                                     <div class="w-20 rounded">

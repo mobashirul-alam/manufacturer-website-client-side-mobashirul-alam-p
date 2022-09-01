@@ -13,8 +13,8 @@ const RequireAdmin = ({ children }) => {
 
     if (loading || adminLoading) {
         return <Loading></Loading>;
-    }
-    console.log('inside require admin', user, admin)
+    };
+
     if (!user || !admin) {
         signOut(auth);
         return <Navigate to="/login" state={{ from: location }} replace />;

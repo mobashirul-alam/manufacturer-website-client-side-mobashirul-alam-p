@@ -58,6 +58,7 @@ const MyOrders = () => {
                             <th>Total Price(usd)</th>
                             <th>Payment</th>
                             <th>Cancel Order</th>
+                            <th>Order Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,13 +91,9 @@ const MyOrders = () => {
                                         !order.paid
                                         &&
                                         <div>
-                                            {/* <button onClick={() => handleCancel(order._id)} className='btn btn-error btn-sm text-black'>Cancel</button> */}
-
                                             <label for="cancel-order-modal" className="btn modal-button btn-error btn-sm">
                                                 Cancel
                                             </label>
-
-
                                             <input type="checkbox" id="cancel-order-modal" class="modal-toggle" />
                                             <div class="modal modal-bottom sm:modal-middle">
                                                 <div class="modal-box">
@@ -116,6 +113,14 @@ const MyOrders = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                    }
+                                </td>
+                                <td>
+                                    {
+                                        order.paid &&
+                                        <button className='btn btn-sm bg-slate-400'>
+                                            {order.orderStatus ? order.orderStatus : 'Pending'}
+                                        </button>
                                     }
                                 </td>
                             </tr>)
