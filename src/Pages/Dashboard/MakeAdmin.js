@@ -39,12 +39,15 @@ const MakeAdmin = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    <label
-                                        onClick={() => setMakeUserAdmin(user)}
-                                        for="make-admin-modal"
-                                        className="btn modal-button btn-sm">
-                                        Make Admin
-                                    </label>
+                                    {
+                                        !user.role &&
+                                        <label
+                                            onClick={() => setMakeUserAdmin(user)}
+                                            for="make-admin-modal"
+                                            className="btn modal-button btn-sm">
+                                            Make Admin
+                                        </label>
+                                    }
                                 </td>
                             </tr>)
                         }
